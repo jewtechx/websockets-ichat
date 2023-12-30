@@ -23,12 +23,12 @@ function onConnected(socket) {
     io.emit('clients-total', socketsConected.size)
   })
 
-  socket.on('message', (data) => {
+  socket.on("message", (data) => {
     // console.log(data)
-    socket.broadcast.emit('chat-message', data)
+    socket.broadcast.emit("chat-message" , data)
   })
 
-  socket.on('feedback', (data) => {
-    socket.broadcast.emit('feedback', data)
+  socket.on("feedback" , (data) => {
+    socket.broadcast.emit("feedback" , data)
   })
 }
